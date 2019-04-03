@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% block title %}
+      <title>Home</title>
+    {% endblock %}
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'BandSiteApp/css/base.css' %}" rel="stylesheet">
+
+    {% block stylesheet %}
+
+    {% endblock %}
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+
+    {% block form-media %}
+      {{form.media}}
+    {% endblock %}
+
+  </head>
+
+  <body>
+    {% block content-header %}
+      {% include "BookListApp/header.html" with Breadcrumbs=Breadcrumbs %}
+    {% endblock %}
+    {% block content-main %}
+      <main>
+
+      </main>
+    {% endblock %}
+    {% block content-footer %}
+      <footer>
+
+      </footer>
+    {% endblock %}
+
+    {% if messages %}
+      {% include "BookListApp/message.html" with messages=messages%}
+    {% endif %}
+
+    {% block content-scripts %}
+    {% endblock %}
+  </body>
+</html>
